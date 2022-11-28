@@ -1,0 +1,228 @@
+:root {
+  /* Colors */
+  --purple-bg: #290742;
+  --dark-bg: #170027;
+  --button-bg: #9e6dc2;
+  --white: #fff;
+  --light-purple: #fbf6ff;
+  --green: #4fff4b;
+
+  /* Fonts */
+  --primary-font: "Poppins", sans-serif;
+  --second-font: "Roboto", sans-serif;
+
+  /* Font Size */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "home"
+    "content-area";
+}
+
+/* ---- HOME ---- */
+.container-one {
+  display: inherit;
+  justify-content: center;
+  min-width: 100%;
+  grid-area: home;
+  background-color: var(--purple-bg);
+  border-bottom: 5px solid var(--green);
+}
+
+.home {
+  max-width: 80%;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+    "header header"
+    "home-area featured-image";
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0 5rem 0;
+}
+
+header .menu-mobile {
+  display: none;
+}
+
+header .navbar {
+  flex-grow: 1;
+}
+
+header .navbar ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  font-family: var(--second-font);
+  color: var(--white);
+  font-size: 1.8rem;
+}
+header .navbar ul li {
+  border: 2px solid transparent;
+  padding-left: 2px;
+}
+
+header .navbar ul li:hover {
+  color: var(--button-bg);
+  font-weight: bold;
+  cursor: pointer;
+  border-left-color: var(--green);
+  transition: all .2s;
+}
+
+header .navbar ul :nth-child(1) {
+  font-weight: bold;
+  padding-left: 2px;
+  border-left: 2px solid var(--green);
+}
+
+header .search {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-bg);
+  border-radius: 4px;
+}
+
+header .search input {
+  border: none;
+  outline: none;
+  padding: .5rem 0 .5rem .8rem;
+  background-color: transparent;
+  color: var(--white);
+}
+
+ header .search:focus-within {
+  outline: 2px solid var(--button-bg);
+}
+
+header .search img {
+  padding: .5rem 1.2rem;
+  background-color: var(--button-bg);
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.home-area .text-group h1 {
+  font-family: var(--primary-font);
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: var(--button-bg);
+}
+
+.home-area .text-group p {
+  font-family: var(--second-font);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--light-purple);
+  line-height: 2.7rem;
+  margin-top: 2rem;
+}
+
+.home-area .text-group h2 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--second-font);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--button-bg);
+  margin-top: 2rem;
+}
+
+.featured-image {
+  justify-self: end;
+}
+
+/* ---- CONTENT ---- */
+.container-two {
+  width: 100%;
+  display: inherit;
+  justify-content: center;
+  grid-area: content-area;
+  background-color: var(--light-purple);
+}
+
+.content-area {
+  max-width: 80%;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+  "middle-area"
+  "bottom-area";
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.middle-area {
+  grid-area: middle-area;
+  display: inherit;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem 0;
+  margin: 0 auto;
+  gap: 8rem;
+}
+
+.seconds-article {
+  display: flex;
+  flex-direction: column;
+}
+
+.seconds-article .side-article-1 {
+  padding-bottom: 2rem;
+  border-bottom: .5px solid lightgrey;
+}
+
+.seconds-article .side-article-2 {
+  padding-top: 2rem;
+}
+
+.date-publication,
+.content-article {
+  font-family: var(--second-font);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+
+.title-article {
+  font-family: var(--primary-font);
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--purple-bg);
+}
+
+.bottom-area {
+  grid-area: bottom-area;
+  display: inherit;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0;
+  gap: 4rem;
+}
+
+body img:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+  transition: all .3s ease;
+}
